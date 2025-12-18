@@ -61,7 +61,7 @@ workspace "EOSC Data Commons" "EOSC Data Commons Architecture" {
     se -> wh_db "Searchers"
     ui -> packager "Get Platform-ready package"
     ui -> tools_reg "Get matching tools"
-    packager -> dispatcher "Request Dispatch"
+    ui -> dispatcher "Request Dispatch"
     type_reg -> wh_db "Indexed on"
     se -> llm "LLM inference request"
     tools_reg -> toolrepo "Harvests data from"
@@ -110,20 +110,20 @@ workspace "EOSC Data Commons" "EOSC Data Commons Architecture" {
     /* some fancier looks for the diagrams */
     styles {
       element "Element" {
-        background #3E6DB9
+        background #005FAA
         color #ffffff
         shape roundedbox
         strokeWidth 4
       }
       element "Person" {
-        background #284477
+        background #1E325C
         shape person
       }
       element "Database" {
         shape cylinder
       }
       element "External" {
-        background #979797
+        background #999999
       }
       element "UI" {
         shape WebBrowser
@@ -133,6 +133,9 @@ workspace "EOSC Data Commons" "EOSC Data Commons Architecture" {
       }
       element "Boundary" {
         strokeWidth 3
+      }
+      element "Container" {
+        background #EF8200
       }
     }
   }

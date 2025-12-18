@@ -1,1156 +1,906 @@
 {
-  "configuration": {
-    "scope": "SoftwareSystem"
+  "configuration" : {
+    "scope" : "SoftwareSystem"
   },
-  "description": "EOSC Data Commons Architecture",
-  "documentation": {},
-  "id": 1,
-  "lastModifiedAgent": "structurizr-ui",
-  "lastModifiedDate": "2025-12-16T11:48:57Z",
-  "model": {
-    "people": [
-      {
-        "id": "1",
-        "location": "Unspecified",
-        "name": "EOSC Researcher",
-        "properties": {
-          "structurizr.dsl.identifier": "u"
-        },
-        "relationships": [
-          {
-            "description": "Searches and request deployments",
-            "destinationId": "5",
-            "id": "23",
-            "sourceId": "1",
-            "tags": "Relationship"
-          },
-          {
-            "description": "Searches and request deployments",
-            "destinationId": "3",
-            "id": "24",
-            "linkedRelationshipId": "23",
-            "sourceId": "1"
-          },
-          {
-            "description": "Searches and request deployments",
-            "destinationId": "2",
-            "id": "25",
-            "linkedRelationshipId": "23",
-            "sourceId": "1"
-          }
-        ],
-        "tags": "Element,Person"
-      }
-    ],
-    "softwareSystems": [
-      {
-        "containers": [
-          {
-            "components": [
-              {
-                "documentation": {},
-                "id": "4",
-                "name": "Crawlers",
-                "properties": {
-                  "structurizr.dsl.identifier": "crawler"
-                },
-                "relationships": [
-                  {
-                    "description": "Harvests data from",
-                    "destinationId": "19",
-                    "id": "41",
-                    "sourceId": "4",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Populates",
-                    "destinationId": "9",
-                    "id": "49",
-                    "sourceId": "4",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "5",
-                "name": "User Interface",
-                "properties": {
-                  "structurizr.dsl.identifier": "ui"
-                },
-                "relationships": [
-                  {
-                    "description": "Searches",
-                    "destinationId": "10",
-                    "id": "26",
-                    "sourceId": "5",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Get Platform-ready package",
-                    "destinationId": "11",
-                    "id": "28",
-                    "sourceId": "5",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Get matching tools",
-                    "destinationId": "7",
-                    "id": "29",
-                    "sourceId": "5",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component,UI"
-              },
-              {
-                "documentation": {},
-                "id": "6",
-                "name": "File Metadata Harvester",
-                "properties": {
-                  "structurizr.dsl.identifier": "file_met"
-                },
-                "relationships": [
-                  {
-                    "description": "Harvests data from",
-                    "destinationId": "19",
-                    "id": "44",
-                    "sourceId": "6",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Serves as file metadata information for",
-                    "destinationId": "9",
-                    "id": "45",
-                    "sourceId": "6",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Sends data to",
-                    "destinationId": "8",
-                    "id": "48",
-                    "sourceId": "6",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "7",
-                "name": "Tools Registry",
-                "properties": {
-                  "structurizr.dsl.identifier": "tools_reg"
-                },
-                "relationships": [
-                  {
-                    "description": "Harvests data from",
-                    "destinationId": "20",
-                    "id": "38",
-                    "sourceId": "7",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Matches tools with data",
-                    "destinationId": "9",
-                    "id": "46",
-                    "sourceId": "7",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Get tool information",
-                    "destinationId": "11",
-                    "id": "47",
-                    "sourceId": "7",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "8",
-                "name": "Type Registry",
-                "properties": {
-                  "structurizr.dsl.identifier": "type_reg"
-                },
-                "relationships": [
-                  {
-                    "description": "Indexed on",
-                    "destinationId": "9",
-                    "id": "34",
-                    "sourceId": "8",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "9",
-                "name": "Metadata Warehouse",
-                "properties": {
-                  "structurizr.dsl.identifier": "wh_db"
-                },
-                "tags": "Element,Component,Database"
-              },
-              {
-                "documentation": {},
-                "id": "10",
-                "name": "Data Commons Search",
-                "properties": {
-                  "structurizr.dsl.identifier": "se"
-                },
-                "relationships": [
-                  {
-                    "description": "Searchers",
-                    "destinationId": "9",
-                    "id": "27",
-                    "sourceId": "10",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "LLM inference request",
-                    "destinationId": "18",
-                    "id": "35",
-                    "sourceId": "10",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "11",
-                "name": "Request Packager",
-                "properties": {
-                  "structurizr.dsl.identifier": "packager"
-                },
-                "relationships": [
-                  {
-                    "description": "Request Dispatch",
-                    "destinationId": "14",
-                    "id": "30",
-                    "sourceId": "11",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Request Dispatch",
-                    "destinationId": "13",
-                    "id": "31",
-                    "linkedRelationshipId": "30",
-                    "sourceId": "11"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "12",
-                "name": "FAIR Assessment Toolkit",
-                "properties": {
-                  "structurizr.dsl.identifier": "fairness"
-                },
-                "relationships": [
-                  {
-                    "description": "Adds FAIRness score",
-                    "destinationId": "9",
-                    "id": "50",
-                    "sourceId": "12",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              }
-            ],
-            "documentation": {},
-            "id": "3",
-            "name": "EOSC Matchmaker",
-            "properties": {
-              "structurizr.dsl.identifier": "mm"
-            },
-            "relationships": [
-              {
-                "description": "Request Dispatch",
-                "destinationId": "14",
-                "id": "32",
-                "linkedRelationshipId": "30",
-                "sourceId": "3"
-              },
-              {
-                "description": "Request Dispatch",
-                "destinationId": "13",
-                "id": "33",
-                "linkedRelationshipId": "30",
-                "sourceId": "3"
-              },
-              {
-                "description": "LLM inference request",
-                "destinationId": "18",
-                "id": "36",
-                "linkedRelationshipId": "35",
-                "sourceId": "3"
-              },
-              {
-                "description": "Harvests data from",
-                "destinationId": "20",
-                "id": "39",
-                "linkedRelationshipId": "38",
-                "sourceId": "3"
-              },
-              {
-                "description": "Harvests data from",
-                "destinationId": "19",
-                "id": "42",
-                "linkedRelationshipId": "41",
-                "sourceId": "3"
-              }
-            ],
-            "tags": "Element,Container"
-          },
-          {
-            "components": [
-              {
-                "documentation": {},
-                "id": "14",
-                "name": "Dispatcher",
-                "properties": {
-                  "structurizr.dsl.identifier": "dispatcher"
-                },
-                "relationships": [
-                  {
-                    "description": "Request data at analysis environment",
-                    "destinationId": "16",
-                    "id": "52",
-                    "sourceId": "14",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Submit workload",
-                    "destinationId": "17",
-                    "id": "65",
-                    "sourceId": "14",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "15",
-                "name": "Deployment tools",
-                "properties": {
-                  "structurizr.dsl.identifier": "dep_tools"
-                },
-                "relationships": [
-                  {
-                    "description": "Deployment of analytics/VREs",
-                    "destinationId": "21",
-                    "id": "53",
-                    "sourceId": "15",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "16",
-                "name": "Data access tools",
-                "properties": {
-                  "structurizr.dsl.identifier": "data_tools"
-                },
-                "relationships": [
-                  {
-                    "description": "Manages data",
-                    "destinationId": "21",
-                    "id": "67",
-                    "sourceId": "16",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Manages data",
-                    "destinationId": "22",
-                    "id": "68",
-                    "sourceId": "16",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              },
-              {
-                "documentation": {},
-                "id": "17",
-                "name": "Compute Engines",
-                "properties": {
-                  "structurizr.dsl.identifier": "engine"
-                },
-                "relationships": [
-                  {
-                    "description": "Request deployment of compute environment (VRE)",
-                    "destinationId": "15",
-                    "id": "51",
-                    "sourceId": "17",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Deployment of analytics",
-                    "destinationId": "22",
-                    "id": "56",
-                    "sourceId": "17",
-                    "tags": "Relationship"
-                  },
-                  {
-                    "description": "Deployment of analytics",
-                    "destinationId": "21",
-                    "id": "59",
-                    "sourceId": "17",
-                    "tags": "Relationship"
-                  }
-                ],
-                "tags": "Element,Component"
-              }
-            ],
-            "documentation": {},
-            "id": "13",
-            "name": "EOSC Data Player",
-            "properties": {
-              "structurizr.dsl.identifier": "player"
-            },
-            "relationships": [
-              {
-                "description": "Deployment of analytics/VREs",
-                "destinationId": "21",
-                "id": "54",
-                "linkedRelationshipId": "53",
-                "sourceId": "13"
-              },
-              {
-                "description": "Deployment of analytics",
-                "destinationId": "22",
-                "id": "57",
-                "linkedRelationshipId": "56",
-                "sourceId": "13"
-              }
-            ],
-            "tags": "Element,Container"
-          }
-        ],
-        "documentation": {},
-        "id": "2",
-        "location": "Unspecified",
-        "name": "EOSC Data Commons Services",
-        "properties": {
-          "structurizr.dsl.identifier": "eodcservice"
-        },
-        "relationships": [
-          {
-            "description": "LLM inference request",
-            "destinationId": "18",
-            "id": "37",
-            "linkedRelationshipId": "35",
-            "sourceId": "2"
-          },
-          {
-            "description": "Harvests data from",
-            "destinationId": "20",
-            "id": "40",
-            "linkedRelationshipId": "38",
-            "sourceId": "2"
-          },
-          {
-            "description": "Harvests data from",
-            "destinationId": "19",
-            "id": "43",
-            "linkedRelationshipId": "41",
-            "sourceId": "2"
-          },
-          {
-            "description": "Deployment of analytics/VREs",
-            "destinationId": "21",
-            "id": "55",
-            "linkedRelationshipId": "53",
-            "sourceId": "2"
-          },
-          {
-            "description": "Deployment of analytics",
-            "destinationId": "22",
-            "id": "58",
-            "linkedRelationshipId": "56",
-            "sourceId": "2"
-          }
-        ],
-        "tags": "Element,Software System"
+  "description" : "EOSC Data Commons Architecture",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2025-12-18T09:07:29Z",
+  "model" : {
+    "people" : [ {
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "EOSC Researcher",
+      "properties" : {
+        "structurizr.dsl.identifier" : "u"
       },
-      {
-        "documentation": {},
-        "id": "18",
-        "location": "Unspecified",
-        "name": "LLM Inference Server",
-        "properties": {
-          "structurizr.dsl.identifier": "llm"
+      "relationships" : [ {
+        "description" : "Searches and request deployments",
+        "destinationId" : "5",
+        "id" : "23",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Searches and request deployments",
+        "destinationId" : "3",
+        "id" : "24",
+        "linkedRelationshipId" : "23",
+        "sourceId" : "1"
+      }, {
+        "description" : "Searches and request deployments",
+        "destinationId" : "2",
+        "id" : "25",
+        "linkedRelationshipId" : "23",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "4",
+          "name" : "Crawlers",
+          "properties" : {
+            "structurizr.dsl.identifier" : "crawler"
+          },
+          "relationships" : [ {
+            "description" : "Harvests data from",
+            "destinationId" : "19",
+            "id" : "41",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Populates",
+            "destinationId" : "9",
+            "id" : "49",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "5",
+          "name" : "User Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "ui"
+          },
+          "relationships" : [ {
+            "description" : "Searches",
+            "destinationId" : "10",
+            "id" : "26",
+            "sourceId" : "5",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get Platform-ready package",
+            "destinationId" : "11",
+            "id" : "28",
+            "sourceId" : "5",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get matching tools",
+            "destinationId" : "7",
+            "id" : "29",
+            "sourceId" : "5",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Request Dispatch",
+            "destinationId" : "14",
+            "id" : "30",
+            "sourceId" : "5",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Request Dispatch",
+            "destinationId" : "13",
+            "id" : "31",
+            "linkedRelationshipId" : "30",
+            "sourceId" : "5"
+          } ],
+          "tags" : "Element,Component,UI"
+        }, {
+          "documentation" : { },
+          "id" : "6",
+          "name" : "File Metadata Harvester",
+          "properties" : {
+            "structurizr.dsl.identifier" : "file_met"
+          },
+          "relationships" : [ {
+            "description" : "Harvests data from",
+            "destinationId" : "19",
+            "id" : "44",
+            "sourceId" : "6",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Serves as file metadata information for",
+            "destinationId" : "9",
+            "id" : "45",
+            "sourceId" : "6",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sends data to",
+            "destinationId" : "8",
+            "id" : "48",
+            "sourceId" : "6",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "7",
+          "name" : "Tools Registry",
+          "properties" : {
+            "structurizr.dsl.identifier" : "tools_reg"
+          },
+          "relationships" : [ {
+            "description" : "Harvests data from",
+            "destinationId" : "20",
+            "id" : "38",
+            "sourceId" : "7",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Matches tools with data",
+            "destinationId" : "9",
+            "id" : "46",
+            "sourceId" : "7",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Get tool information",
+            "destinationId" : "11",
+            "id" : "47",
+            "sourceId" : "7",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "8",
+          "name" : "Type Registry",
+          "properties" : {
+            "structurizr.dsl.identifier" : "type_reg"
+          },
+          "relationships" : [ {
+            "description" : "Indexed on",
+            "destinationId" : "9",
+            "id" : "34",
+            "sourceId" : "8",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "9",
+          "name" : "Metadata Warehouse",
+          "properties" : {
+            "structurizr.dsl.identifier" : "wh_db"
+          },
+          "tags" : "Element,Component,Database"
+        }, {
+          "documentation" : { },
+          "id" : "10",
+          "name" : "Data Commons Search",
+          "properties" : {
+            "structurizr.dsl.identifier" : "se"
+          },
+          "relationships" : [ {
+            "description" : "Searchers",
+            "destinationId" : "9",
+            "id" : "27",
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "LLM inference request",
+            "destinationId" : "18",
+            "id" : "35",
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "11",
+          "name" : "Request Packager",
+          "properties" : {
+            "structurizr.dsl.identifier" : "packager"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "12",
+          "name" : "FAIR Assessment Toolkit",
+          "properties" : {
+            "structurizr.dsl.identifier" : "fairness"
+          },
+          "relationships" : [ {
+            "description" : "Adds FAIRness score",
+            "destinationId" : "9",
+            "id" : "50",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "documentation" : { },
+        "id" : "3",
+        "name" : "EOSC Matchmaker",
+        "properties" : {
+          "structurizr.dsl.identifier" : "mm"
         },
-        "tags": "Element,Software System,External"
+        "relationships" : [ {
+          "description" : "Request Dispatch",
+          "destinationId" : "14",
+          "id" : "32",
+          "linkedRelationshipId" : "30",
+          "sourceId" : "3"
+        }, {
+          "description" : "Request Dispatch",
+          "destinationId" : "13",
+          "id" : "33",
+          "linkedRelationshipId" : "30",
+          "sourceId" : "3"
+        }, {
+          "description" : "LLM inference request",
+          "destinationId" : "18",
+          "id" : "36",
+          "linkedRelationshipId" : "35",
+          "sourceId" : "3"
+        }, {
+          "description" : "Harvests data from",
+          "destinationId" : "20",
+          "id" : "39",
+          "linkedRelationshipId" : "38",
+          "sourceId" : "3"
+        }, {
+          "description" : "Harvests data from",
+          "destinationId" : "19",
+          "id" : "42",
+          "linkedRelationshipId" : "41",
+          "sourceId" : "3"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "14",
+          "name" : "Dispatcher",
+          "properties" : {
+            "structurizr.dsl.identifier" : "dispatcher"
+          },
+          "relationships" : [ {
+            "description" : "Request data at analysis environment",
+            "destinationId" : "16",
+            "id" : "52",
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Submit workload",
+            "destinationId" : "17",
+            "id" : "65",
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "15",
+          "name" : "Deployment tools",
+          "properties" : {
+            "structurizr.dsl.identifier" : "dep_tools"
+          },
+          "relationships" : [ {
+            "description" : "Deployment of analytics/VREs",
+            "destinationId" : "21",
+            "id" : "53",
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "16",
+          "name" : "Data access tools",
+          "properties" : {
+            "structurizr.dsl.identifier" : "data_tools"
+          },
+          "relationships" : [ {
+            "description" : "Manages data",
+            "destinationId" : "21",
+            "id" : "67",
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Manages data",
+            "destinationId" : "22",
+            "id" : "68",
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "17",
+          "name" : "Compute Engines",
+          "properties" : {
+            "structurizr.dsl.identifier" : "engine"
+          },
+          "relationships" : [ {
+            "description" : "Request deployment of compute environment (VRE)",
+            "destinationId" : "15",
+            "id" : "51",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Deployment of analytics",
+            "destinationId" : "22",
+            "id" : "56",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Deployment of analytics",
+            "destinationId" : "21",
+            "id" : "59",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "documentation" : { },
+        "id" : "13",
+        "name" : "EOSC Data Player",
+        "properties" : {
+          "structurizr.dsl.identifier" : "player"
+        },
+        "relationships" : [ {
+          "description" : "Deployment of analytics/VREs",
+          "destinationId" : "21",
+          "id" : "54",
+          "linkedRelationshipId" : "53",
+          "sourceId" : "13"
+        }, {
+          "description" : "Deployment of analytics",
+          "destinationId" : "22",
+          "id" : "57",
+          "linkedRelationshipId" : "56",
+          "sourceId" : "13"
+        } ],
+        "tags" : "Element,Container"
+      } ],
+      "documentation" : { },
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "EOSC Data Commons Services",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eodcservice"
       },
-      {
-        "documentation": {},
-        "id": "19",
-        "location": "Unspecified",
-        "name": "Data Repository",
-        "properties": {
-          "structurizr.dsl.identifier": "repo"
-        },
-        "tags": "Element,Software System,External,Database"
+      "relationships" : [ {
+        "description" : "LLM inference request",
+        "destinationId" : "18",
+        "id" : "37",
+        "linkedRelationshipId" : "35",
+        "sourceId" : "2"
+      }, {
+        "description" : "Harvests data from",
+        "destinationId" : "20",
+        "id" : "40",
+        "linkedRelationshipId" : "38",
+        "sourceId" : "2"
+      }, {
+        "description" : "Harvests data from",
+        "destinationId" : "19",
+        "id" : "43",
+        "linkedRelationshipId" : "41",
+        "sourceId" : "2"
+      }, {
+        "description" : "Deployment of analytics/VREs",
+        "destinationId" : "21",
+        "id" : "55",
+        "linkedRelationshipId" : "53",
+        "sourceId" : "2"
+      }, {
+        "description" : "Deployment of analytics",
+        "destinationId" : "22",
+        "id" : "58",
+        "linkedRelationshipId" : "56",
+        "sourceId" : "2"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "documentation" : { },
+      "id" : "18",
+      "location" : "Unspecified",
+      "name" : "LLM Inference Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "llm"
       },
-      {
-        "documentation": {},
-        "id": "20",
-        "location": "Unspecified",
-        "name": "Tool Repository",
-        "properties": {
-          "structurizr.dsl.identifier": "toolrepo"
-        },
-        "tags": "Element,Software System,External,Database"
+      "tags" : "Element,Software System,External"
+    }, {
+      "documentation" : { },
+      "id" : "19",
+      "location" : "Unspecified",
+      "name" : "Data Repository",
+      "properties" : {
+        "structurizr.dsl.identifier" : "repo"
       },
-      {
-        "documentation": {},
-        "id": "21",
-        "location": "Unspecified",
-        "name": "Compute Platform",
-        "properties": {
-          "structurizr.dsl.identifier": "compute"
-        },
-        "tags": "Element,Software System,External"
+      "tags" : "Element,Software System,External,Database"
+    }, {
+      "documentation" : { },
+      "id" : "20",
+      "location" : "Unspecified",
+      "name" : "Tool Repository",
+      "properties" : {
+        "structurizr.dsl.identifier" : "toolrepo"
       },
-      {
-        "documentation": {},
-        "id": "22",
-        "location": "Unspecified",
-        "name": "VRE",
-        "properties": {
-          "structurizr.dsl.identifier": "ext_vre"
-        },
-        "relationships": [
-          {
-            "description": "Request dispatch",
-            "destinationId": "14",
-            "id": "60",
-            "sourceId": "22",
-            "tags": "Relationship"
-          },
-          {
-            "description": "Request dispatch",
-            "destinationId": "13",
-            "id": "61",
-            "linkedRelationshipId": "60",
-            "sourceId": "22"
-          },
-          {
-            "description": "Request dispatch",
-            "destinationId": "2",
-            "id": "62",
-            "linkedRelationshipId": "60",
-            "sourceId": "22"
-          },
-          {
-            "description": "Dataset discovery and matching with tools",
-            "destinationId": "10",
-            "id": "63",
-            "sourceId": "22",
-            "tags": "Relationship"
-          },
-          {
-            "description": "Dataset discovery and matching with tools",
-            "destinationId": "3",
-            "id": "64",
-            "linkedRelationshipId": "63",
-            "sourceId": "22"
-          },
-          {
-            "description": "Runs on",
-            "destinationId": "21",
-            "id": "66",
-            "sourceId": "22",
-            "tags": "Relationship"
-          }
-        ],
-        "tags": "Element,Software System,External"
-      }
-    ]
+      "tags" : "Element,Software System,External,Database"
+    }, {
+      "documentation" : { },
+      "id" : "21",
+      "location" : "Unspecified",
+      "name" : "Compute Platform",
+      "properties" : {
+        "structurizr.dsl.identifier" : "compute"
+      },
+      "tags" : "Element,Software System,External"
+    }, {
+      "documentation" : { },
+      "id" : "22",
+      "location" : "Unspecified",
+      "name" : "VRE",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ext_vre"
+      },
+      "relationships" : [ {
+        "description" : "Request dispatch",
+        "destinationId" : "14",
+        "id" : "60",
+        "sourceId" : "22",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Request dispatch",
+        "destinationId" : "13",
+        "id" : "61",
+        "linkedRelationshipId" : "60",
+        "sourceId" : "22"
+      }, {
+        "description" : "Request dispatch",
+        "destinationId" : "2",
+        "id" : "62",
+        "linkedRelationshipId" : "60",
+        "sourceId" : "22"
+      }, {
+        "description" : "Dataset discovery and matching with tools",
+        "destinationId" : "10",
+        "id" : "63",
+        "sourceId" : "22",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dataset discovery and matching with tools",
+        "destinationId" : "3",
+        "id" : "64",
+        "linkedRelationshipId" : "63",
+        "sourceId" : "22"
+      }, {
+        "description" : "Runs on",
+        "destinationId" : "21",
+        "id" : "66",
+        "sourceId" : "22",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External"
+    } ]
   },
-  "name": "EOSC Data Commons",
-  "properties": {
-    "structurizr.dsl": "d29ya3NwYWNlICJFT1NDIERhdGEgQ29tbW9ucyIgIkVPU0MgRGF0YSBDb21tb25zIEFyY2hpdGVjdHVyZSIgewoKCiAgbW9kZWwgewogICAgdSA9IHBlcnNvbiAiRU9TQyBSZXNlYXJjaGVyIgogICAgZW9kY3NlcnZpY2UgPSBzb2Z0d2FyZVN5c3RlbSAiRU9TQyBEYXRhIENvbW1vbnMgU2VydmljZXMiIHsKICAgICAgbW0gPSBjb250YWluZXIgIkVPU0MgTWF0Y2htYWtlciIgewogICAgICAgIGNyYXdsZXIgPSBjb21wb25lbnQgIkNyYXdsZXJzIgoJdWkgPSBjb21wb25lbnQgIlVzZXIgSW50ZXJmYWNlIiB7CiAgICAgICAgICB0YWdzICJVSSIKCX0KCWZpbGVfbWV0ID0gY29tcG9uZW50ICJGaWxlIE1ldGFkYXRhIEhhcnZlc3RlciIKCXRvb2xzX3JlZyA9IGNvbXBvbmVudCAiVG9vbHMgUmVnaXN0cnkiCgl0eXBlX3JlZyA9IGNvbXBvbmVudCAiVHlwZSBSZWdpc3RyeSIKCXdoX2RiID0gY29tcG9uZW50ICJNZXRhZGF0YSBXYXJlaG91c2UiIHsKCQl0YWdzICJEYXRhYmFzZSIKCX0KCXNlID0gY29tcG9uZW50ICJEYXRhIENvbW1vbnMgU2VhcmNoIgogICAgCXBhY2thZ2VyID0gY29tcG9uZW50ICJSZXF1ZXN0IFBhY2thZ2VyIiAgICAKCWZhaXJuZXNzID0gY29tcG9uZW50ICJGQUlSIEFzc2Vzc21lbnQgVG9vbGtpdCIKICAgICAgfQogICAgICBwbGF5ZXIgPSBjb250YWluZXIgIkVPU0MgRGF0YSBQbGF5ZXIiIHsKICAgICAgICBkaXNwYXRjaGVyID0gY29tcG9uZW50ICJEaXNwYXRjaGVyIgogICAgICAgIGRlcF90b29scyA9IGNvbXBvbmVudCAiRGVwbG95bWVudCB0b29scyIKCWRhdGFfdG9vbHMgPSBjb21wb25lbnQgIkRhdGEgYWNjZXNzIHRvb2xzIgoJZW5naW5lID0gY29tcG9uZW50ICJDb21wdXRlIEVuZ2luZXMiCiAgICAgIH0KICAgIH0KCiAgICBsbG0gPSBzb2Z0d2FyZVN5c3RlbSAiTExNIEluZmVyZW5jZSBTZXJ2ZXIiIHsKICAgICAgdGFncyAiRXh0ZXJuYWwiCiAgICB9CgogICAgcmVwbyA9IHNvZnR3YXJlU3lzdGVtICJEYXRhIFJlcG9zaXRvcnkiIHsKICAgICAgdGFncyAiRXh0ZXJuYWwiCiAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgfQogICAgdG9vbHJlcG8gPSBzb2Z0d2FyZVN5c3RlbSAiVG9vbCBSZXBvc2l0b3J5IiB7CiAgICAgIHRhZ3MgIkV4dGVybmFsIgogICAgICB0YWdzICJEYXRhYmFzZSIKICAgIH0KICAgIGNvbXB1dGUgPSBzb2Z0d2FyZVN5c3RlbSAiQ29tcHV0ZSBQbGF0Zm9ybSIgewogICAgICB0YWdzICJFeHRlcm5hbCIKICAgIH0KICAgIGV4dF92cmUgPSBzb2Z0d2FyZVN5c3RlbSAiVlJFIiB7CiAgICAgIHRhZ3MgIkV4dGVybmFsIgogICAgfQoKICAgIHUgLT4gdWkgIlNlYXJjaGVzIGFuZCByZXF1ZXN0IGRlcGxveW1lbnRzIgogICAgdWkgLT4gc2UgIlNlYXJjaGVzIgogICAgc2UgLT4gd2hfZGIgIlNlYXJjaGVycyIKICAgIHVpIC0+IHBhY2thZ2VyICJHZXQgUGxhdGZvcm0tcmVhZHkgcGFja2FnZSIKICAgIHVpIC0+IHRvb2xzX3JlZyAiR2V0IG1hdGNoaW5nIHRvb2xzIgogICAgcGFja2FnZXIgLT4gZGlzcGF0Y2hlciAiUmVxdWVzdCBEaXNwYXRjaCIgCiAgICB0eXBlX3JlZyAtPiB3aF9kYiAiSW5kZXhlZCBvbiIKICAgIHNlIC0+IGxsbSAiTExNIGluZmVyZW5jZSByZXF1ZXN0IgogICAgdG9vbHNfcmVnIC0+IHRvb2xyZXBvICJIYXJ2ZXN0cyBkYXRhIGZyb20iCiAgICBjcmF3bGVyIC0+IHJlcG8gIkhhcnZlc3RzIGRhdGEgZnJvbSIKICAgIGZpbGVfbWV0IC0+IHJlcG8gIkhhcnZlc3RzIGRhdGEgZnJvbSIKICAgIGZpbGVfbWV0IC0+IHdoX2RiICJTZXJ2ZXMgYXMgZmlsZSBtZXRhZGF0YSBpbmZvcm1hdGlvbiBmb3IiCiAgICB0b29sc19yZWcgLT4gd2hfZGIgIk1hdGNoZXMgdG9vbHMgd2l0aCBkYXRhIgogICAgdG9vbHNfcmVnIC0+IHBhY2thZ2VyICJHZXQgdG9vbCBpbmZvcm1hdGlvbiIKICAgIGZpbGVfbWV0IC0+IHR5cGVfcmVnICJTZW5kcyBkYXRhIHRvIgogICAgY3Jhd2xlciAtPiB3aF9kYiAiUG9wdWxhdGVzIgogICAgZmFpcm5lc3MgLT4gd2hfZGIgIkFkZHMgRkFJUm5lc3Mgc2NvcmUiCiAgICBlbmdpbmUgLT4gZGVwX3Rvb2xzICJSZXF1ZXN0IGRlcGxveW1lbnQgb2YgY29tcHV0ZSBlbnZpcm9ubWVudCAoVlJFKSIKICAgIGRpc3BhdGNoZXIgLT4gZGF0YV90b29scyAiUmVxdWVzdCBkYXRhIGF0IGFuYWx5c2lzIGVudmlyb25tZW50IgogICAgZGVwX3Rvb2xzIC0+IGNvbXB1dGUgIkRlcGxveW1lbnQgb2YgYW5hbHl0aWNzL1ZSRXMiCiAgICBlbmdpbmUgLT4gZXh0X3ZyZSAiRGVwbG95bWVudCBvZiBhbmFseXRpY3MiCiAgICBlbmdpbmUgLT4gY29tcHV0ZSAiRGVwbG95bWVudCBvZiBhbmFseXRpY3MiCiAgICBleHRfdnJlIC0+IGRpc3BhdGNoZXIgIlJlcXVlc3QgZGlzcGF0Y2giCiAgICBleHRfdnJlIC0+IHNlICJEYXRhc2V0IGRpc2NvdmVyeSBhbmQgbWF0Y2hpbmcgd2l0aCB0b29scyIKICAgIGRpc3BhdGNoZXIgLT4gZW5naW5lICJTdWJtaXQgd29ya2xvYWQiCiAgICBleHRfdnJlIC0+IGNvbXB1dGUgIlJ1bnMgb24iCiAgICBkYXRhX3Rvb2xzIC0+IGNvbXB1dGUgIk1hbmFnZXMgZGF0YSIKICAgIGRhdGFfdG9vbHMgLT4gZXh0X3ZyZSAiTWFuYWdlcyBkYXRhIgogIH0KCiAgdmlld3MgewogICAgc3lzdGVtTGFuZHNjYXBlIGVkYyAiRGlhZ3JhbTMiIHsKICAgIGluY2x1ZGUgKgogICAgICBhdXRvbGF5b3V0IGxyCiAgfQogICAgc3lzdGVtQ29udGV4dCBlb2Rjc2VydmljZSAiRGlhZ3JhbTEiIHsKICAgICAgaW5jbHVkZSAqCiAgICAgIC8qIGF1dG9sYXlvdXQgbHIgKi8KICAgIH0KCiAgY29udGFpbmVyIGVvZGNzZXJ2aWNlICJFT0RDU2VydmljZSIgewogICAgaW5jbHVkZSAqCiAgICAvKiBhdXRvbGF5b3V0IGxyICovCiAgfQoKIGNvbXBvbmVudCBtbSB7CiAgICBpbmNsdWRlICoKICAgIGV4Y2x1ZGUgZXh0X3ZyZQogICAgLyphdXRvbGF5b3V0IHRiICovCn0KCiBjb21wb25lbnQgIHBsYXllciB7CiAgICBpbmNsdWRlICoKICAgIC8qYXV0b2xheW91dCBsciovCn0KCgogICAgc3R5bGVzIHsKICAgICAgZWxlbWVudCAiRWxlbWVudCIgewoJYmFja2dyb3VuZCAjM0U2REI5CiAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgIHNoYXBlIHJvdW5kZWRib3gKICAgICAgICBzdHJva2VXaWR0aCA0CiAgICAgIH0KICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgYmFja2dyb3VuZCAjMjg0NDc3CiAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgIH0KICAgICAgLyoKICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgYmFja2dyb3VuZCAjZjg2NjI4CiAgICAgIH0KICAgICAgZWxlbWVudCAiQ29udGFpbmVyIiB7CiAgICAgICAgYmFja2dyb3VuZCAjZjg4NzI4CiAgICAgIH0KICAgICAgKi8KICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICB9CiAgICBlbGVtZW50ICJFeHRlcm5hbCIgewogICAgICAgIGJhY2tncm91bmQgIzk3OTc5NyAKICAgIH0KICAgIGVsZW1lbnQgIlVJIiB7CiAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICB9CiAgICByZWxhdGlvbnNoaXAgIlJlbGF0aW9uc2hpcCIgewoJdGhpY2tuZXNzIDMKICAgIH0KICAgIGVsZW1lbnQgIkJvdW5kYXJ5IiB7CiAgICAJc3Ryb2tlV2lkdGggMwogICAgfQogICAgfQogIH0KCiAgY29uZmlndXJhdGlvbiB7CiAgICBzY29wZSBzb2Z0d2FyZXN5c3RlbQogIH0KCn0="
+  "name" : "EOSC Data Commons",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlICJFT1NDIERhdGEgQ29tbW9ucyIgIkVPU0MgRGF0YSBDb21tb25zIEFyY2hpdGVjdHVyZSIgewogIG1vZGVsIHsKICAgIHUgPSBwZXJzb24gIkVPU0MgUmVzZWFyY2hlciIKCiAgICBlb2Rjc2VydmljZSA9IHNvZnR3YXJlU3lzdGVtICJFT1NDIERhdGEgQ29tbW9ucyBTZXJ2aWNlcyIgewogICAgICAvKgogICAgICAgKiBFT1NDIE1hdGNobWFrZXIKICAgICAgICovCiAgICAgIG1tID0gY29udGFpbmVyICJFT1NDIE1hdGNobWFrZXIiIHsKICAgICAgICBjcmF3bGVyID0gY29tcG9uZW50ICJDcmF3bGVycyIKICAgICAgICB1aSA9IGNvbXBvbmVudCAiVXNlciBJbnRlcmZhY2UiIHsKICAgICAgICAgIHRhZ3MgIlVJIgogICAgICAgIH0KICAgICAgICBmaWxlX21ldCA9IGNvbXBvbmVudCAiRmlsZSBNZXRhZGF0YSBIYXJ2ZXN0ZXIiCiAgICAgICAgdG9vbHNfcmVnID0gY29tcG9uZW50ICJUb29scyBSZWdpc3RyeSIKICAgICAgICB0eXBlX3JlZyA9IGNvbXBvbmVudCAiVHlwZSBSZWdpc3RyeSIKICAgICAgICB3aF9kYiA9IGNvbXBvbmVudCAiTWV0YWRhdGEgV2FyZWhvdXNlIiB7CiAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICB9CiAgICAgICAgc2UgPSBjb21wb25lbnQgIkRhdGEgQ29tbW9ucyBTZWFyY2giCiAgICAgICAgcGFja2FnZXIgPSBjb21wb25lbnQgIlJlcXVlc3QgUGFja2FnZXIiCiAgICAgICAgZmFpcm5lc3MgPSBjb21wb25lbnQgIkZBSVIgQXNzZXNzbWVudCBUb29sa2l0IgogICAgICB9CgogICAgICAvKgogICAgICAgKiBFT1NDIERhdGEgUGxheWVyCiAgICAgICAqLwogICAgICBwbGF5ZXIgPSBjb250YWluZXIgIkVPU0MgRGF0YSBQbGF5ZXIiIHsKICAgICAgICBkaXNwYXRjaGVyID0gY29tcG9uZW50ICJEaXNwYXRjaGVyIgogICAgICAgIGRlcF90b29scyA9IGNvbXBvbmVudCAiRGVwbG95bWVudCB0b29scyIKICAgICAgICBkYXRhX3Rvb2xzID0gY29tcG9uZW50ICJEYXRhIGFjY2VzcyB0b29scyIKICAgICAgICBlbmdpbmUgPSBjb21wb25lbnQgIkNvbXB1dGUgRW5naW5lcyIKICAgICAgfQogICAgfQoKICAgIC8qIEV4dGVybmFsIHN5c3RlbXMgKi8KCiAgICBsbG0gPSBzb2Z0d2FyZVN5c3RlbSAiTExNIEluZmVyZW5jZSBTZXJ2ZXIiIHsKICAgICAgdGFncyAiRXh0ZXJuYWwiCiAgICB9CiAgICByZXBvID0gc29mdHdhcmVTeXN0ZW0gIkRhdGEgUmVwb3NpdG9yeSIgewogICAgICB0YWdzICJFeHRlcm5hbCIKICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICB9CiAgICB0b29scmVwbyA9IHNvZnR3YXJlU3lzdGVtICJUb29sIFJlcG9zaXRvcnkiIHsKICAgICAgdGFncyAiRXh0ZXJuYWwiCiAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgfQogICAgY29tcHV0ZSA9IHNvZnR3YXJlU3lzdGVtICJDb21wdXRlIFBsYXRmb3JtIiB7CiAgICAgIHRhZ3MgIkV4dGVybmFsIgogICAgfQogICAgZXh0X3ZyZSA9IHNvZnR3YXJlU3lzdGVtICJWUkUiIHsKICAgICAgdGFncyAiRXh0ZXJuYWwiCiAgICB9CgogICAgLyoKICAgICAqIFJlbGF0aW9uc2hpcHMKICAgICAqLwogICAgdSAtPiB1aSAiU2VhcmNoZXMgYW5kIHJlcXVlc3QgZGVwbG95bWVudHMiCiAgICB1aSAtPiBzZSAiU2VhcmNoZXMiCiAgICBzZSAtPiB3aF9kYiAiU2VhcmNoZXJzIgogICAgdWkgLT4gcGFja2FnZXIgIkdldCBQbGF0Zm9ybS1yZWFkeSBwYWNrYWdlIgogICAgdWkgLT4gdG9vbHNfcmVnICJHZXQgbWF0Y2hpbmcgdG9vbHMiCiAgICB1aSAtPiBkaXNwYXRjaGVyICJSZXF1ZXN0IERpc3BhdGNoIgogICAgdHlwZV9yZWcgLT4gd2hfZGIgIkluZGV4ZWQgb24iCiAgICBzZSAtPiBsbG0gIkxMTSBpbmZlcmVuY2UgcmVxdWVzdCIKICAgIHRvb2xzX3JlZyAtPiB0b29scmVwbyAiSGFydmVzdHMgZGF0YSBmcm9tIgogICAgY3Jhd2xlciAtPiByZXBvICJIYXJ2ZXN0cyBkYXRhIGZyb20iCiAgICBmaWxlX21ldCAtPiByZXBvICJIYXJ2ZXN0cyBkYXRhIGZyb20iCiAgICBmaWxlX21ldCAtPiB3aF9kYiAiU2VydmVzIGFzIGZpbGUgbWV0YWRhdGEgaW5mb3JtYXRpb24gZm9yIgogICAgdG9vbHNfcmVnIC0+IHdoX2RiICJNYXRjaGVzIHRvb2xzIHdpdGggZGF0YSIKICAgIHRvb2xzX3JlZyAtPiBwYWNrYWdlciAiR2V0IHRvb2wgaW5mb3JtYXRpb24iCiAgICBmaWxlX21ldCAtPiB0eXBlX3JlZyAiU2VuZHMgZGF0YSB0byIKICAgIGNyYXdsZXIgLT4gd2hfZGIgIlBvcHVsYXRlcyIKICAgIGZhaXJuZXNzIC0+IHdoX2RiICJBZGRzIEZBSVJuZXNzIHNjb3JlIgogICAgZW5naW5lIC0+IGRlcF90b29scyAiUmVxdWVzdCBkZXBsb3ltZW50IG9mIGNvbXB1dGUgZW52aXJvbm1lbnQgKFZSRSkiCiAgICBkaXNwYXRjaGVyIC0+IGRhdGFfdG9vbHMgIlJlcXVlc3QgZGF0YSBhdCBhbmFseXNpcyBlbnZpcm9ubWVudCIKICAgIGRlcF90b29scyAtPiBjb21wdXRlICJEZXBsb3ltZW50IG9mIGFuYWx5dGljcy9WUkVzIgogICAgZW5naW5lIC0+IGV4dF92cmUgIkRlcGxveW1lbnQgb2YgYW5hbHl0aWNzIgogICAgZW5naW5lIC0+IGNvbXB1dGUgIkRlcGxveW1lbnQgb2YgYW5hbHl0aWNzIgogICAgZXh0X3ZyZSAtPiBkaXNwYXRjaGVyICJSZXF1ZXN0IGRpc3BhdGNoIgogICAgZXh0X3ZyZSAtPiBzZSAiRGF0YXNldCBkaXNjb3ZlcnkgYW5kIG1hdGNoaW5nIHdpdGggdG9vbHMiCiAgICBkaXNwYXRjaGVyIC0+IGVuZ2luZSAiU3VibWl0IHdvcmtsb2FkIgogICAgZXh0X3ZyZSAtPiBjb21wdXRlICJSdW5zIG9uIgogICAgZGF0YV90b29scyAtPiBjb21wdXRlICJNYW5hZ2VzIGRhdGEiCiAgICBkYXRhX3Rvb2xzIC0+IGV4dF92cmUgIk1hbmFnZXMgZGF0YSIKICB9CgogIHZpZXdzIHsKICAgIHN5c3RlbUxhbmRzY2FwZSBlZGMgIlN5c3RlbUxhbmRzY2FwZSIgewogICAgICBpbmNsdWRlICoKICAgICAgYXV0b2xheW91dCBscgogICAgfQogICAgc3lzdGVtQ29udGV4dCBlb2Rjc2VydmljZSAiQ29udGV4dCIgewogICAgICBpbmNsdWRlICoKICAgIH0KICAgIGNvbnRhaW5lciBlb2Rjc2VydmljZSAiRURDU2VydmljZXMiIHsKICAgICAgaW5jbHVkZSAqCiAgICB9CiAgICBjb21wb25lbnQgbW0gewogICAgICBpbmNsdWRlICoKICAgICAgLyogdG8gbm90IG92ZXJsb2FkIHRoZSBkaWFncmFtICovCiAgICAgIGV4Y2x1ZGUgZXh0X3ZyZQogICAgfQogICAgY29tcG9uZW50ICBwbGF5ZXIgewogICAgICBpbmNsdWRlICoKICAgIH0KCgogICAgLyogc29tZSBmYW5jaWVyIGxvb2tzIGZvciB0aGUgZGlhZ3JhbXMgKi8KICAgIHN0eWxlcyB7CiAgICAgIGVsZW1lbnQgIkVsZW1lbnQiIHsKICAgICAgICBiYWNrZ3JvdW5kICMwMDVGQUEKICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgc2hhcGUgcm91bmRlZGJveAogICAgICAgIHN0cm9rZVdpZHRoIDQKICAgICAgfQogICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICBiYWNrZ3JvdW5kICMxRTMyNUMKICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgfQogICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgIHNoYXBlIGN5bGluZGVyCiAgICAgIH0KICAgICAgZWxlbWVudCAiRXh0ZXJuYWwiIHsKICAgICAgICBiYWNrZ3JvdW5kICM5OTk5OTkKICAgICAgfQogICAgICBlbGVtZW50ICJVSSIgewogICAgICAgIHNoYXBlIFdlYkJyb3dzZXIKICAgICAgfQogICAgICByZWxhdGlvbnNoaXAgIlJlbGF0aW9uc2hpcCIgewogICAgICAgIHRoaWNrbmVzcyAzCiAgICAgIH0KICAgICAgZWxlbWVudCAiQm91bmRhcnkiIHsKICAgICAgICBzdHJva2VXaWR0aCAzCiAgICAgIH0KICAgICAgZWxlbWVudCAiQ29udGFpbmVyIiB7CiAgICAgICAgYmFja2dyb3VuZCAjRUY4MjAwCiAgICAgIH0KICAgIH0KICB9CgogIGNvbmZpZ3VyYXRpb24gewogICAgc2NvcGUgc29mdHdhcmVzeXN0ZW0KICB9Cn0="
   },
-  "views": {
-    "componentViews": [
-      {
-        "containerId": "3",
-        "dimensions": {
-          "height": 2584,
-          "width": 3551
-        },
-        "elements": [
-          {
-            "id": "1",
-            "x": 2950,
-            "y": 165
-          },
-          {
-            "id": "4",
-            "x": 1000,
-            "y": 1958
-          },
-          {
-            "id": "5",
-            "x": 2080,
-            "y": 190
-          },
-          {
-            "id": "6",
-            "x": 1000,
-            "y": 1074
-          },
-          {
-            "id": "7",
-            "x": 1004,
-            "y": 632
-          },
-          {
-            "id": "8",
-            "x": 1000,
-            "y": 1516
-          },
-          {
-            "id": "9",
-            "x": 2080,
-            "y": 1516
-          },
-          {
-            "id": "10",
-            "x": 2080,
-            "y": 632
-          },
-          {
-            "id": "11",
-            "x": 1005,
-            "y": 190
-          },
-          {
-            "id": "12",
-            "x": 2080,
-            "y": 1958
-          },
-          {
-            "id": "13",
-            "x": 199,
-            "y": 190
-          },
-          {
-            "id": "18",
-            "x": 2900,
-            "y": 655
-          },
-          {
-            "id": "19",
-            "x": 210,
-            "y": 1516
-          },
-          {
-            "id": "20",
-            "x": 199,
-            "y": 632
-          }
-        ],
-        "externalContainerBoundariesVisible": false,
-        "generatedKey": true,
-        "key": "Component-001",
-        "order": 4,
-        "relationships": [
-          {
-            "id": "23"
-          },
-          {
-            "id": "26"
-          },
-          {
-            "id": "27"
-          },
-          {
-            "id": "28"
-          },
-          {
-            "id": "29"
-          },
-          {
-            "id": "31"
-          },
-          {
-            "id": "34"
-          },
-          {
-            "id": "35"
-          },
-          {
-            "id": "38"
-          },
-          {
-            "id": "41"
-          },
-          {
-            "id": "44"
-          },
-          {
-            "id": "45"
-          },
-          {
-            "id": "46"
-          },
-          {
-            "id": "47"
-          },
-          {
-            "id": "48"
-          },
-          {
-            "id": "49"
-          },
-          {
-            "id": "50"
-          }
-        ]
+  "views" : {
+    "componentViews" : [ {
+      "containerId" : "3",
+      "dimensions" : {
+        "height" : 3256,
+        "width" : 3550
       },
-      {
-        "containerId": "13",
-        "dimensions": {
-          "height": 3100,
-          "width": 2436
-        },
-        "elements": [
-          {
-            "id": "3",
-            "x": 594,
-            "y": 165
-          },
-          {
-            "id": "14",
-            "x": 594,
-            "y": 765
-          },
-          {
-            "id": "15",
-            "x": 244,
-            "y": 1965
-          },
-          {
-            "id": "16",
-            "x": 1075,
-            "y": 1367
-          },
-          {
-            "id": "17",
-            "x": 219,
-            "y": 1365
-          },
-          {
-            "id": "21",
-            "x": 1281,
-            "y": 2565
-          },
-          {
-            "id": "22",
-            "x": 1785,
-            "y": 2017
-          }
-        ],
-        "externalContainerBoundariesVisible": false,
-        "generatedKey": true,
-        "key": "Component-002",
-        "order": 5,
-        "relationships": [
-          {
-            "id": "32"
-          },
-          {
-            "id": "51"
-          },
-          {
-            "id": "52"
-          },
-          {
-            "id": "53"
-          },
-          {
-            "id": "56"
-          },
-          {
-            "id": "59"
-          },
-          {
-            "id": "60",
-            "vertices": [
-              {
-                "x": 1725,
-                "y": 1142
-              }
-            ]
-          },
-          {
-            "id": "64",
-            "vertices": [
-              {
-                "x": 1920,
-                "y": 697
-              }
-            ]
-          },
-          {
-            "id": "65"
-          },
-          {
-            "id": "66"
-          },
-          {
-            "id": "67"
-          },
-          {
-            "id": "68"
-          }
-        ]
-      }
-    ],
-    "configuration": {
-      "branding": {},
-      "lastSavedView": "Component-001",
-      "metadataSymbols": "SquareBrackets",
-      "styles": {
-        "elements": [
-          {
-            "background": "#3e6db9",
-            "color": "#ffffff",
-            "shape": "RoundedBox",
-            "strokeWidth": 4,
-            "tag": "Element"
-          },
-          {
-            "background": "#284477",
-            "shape": "Person",
-            "tag": "Person"
-          },
-          {
-            "shape": "Cylinder",
-            "tag": "Database"
-          },
-          {
-            "background": "#979797",
-            "tag": "External"
-          },
-          {
-            "shape": "WebBrowser",
-            "tag": "UI"
-          },
-          {
-            "strokeWidth": 3,
-            "tag": "Boundary"
-          }
-        ],
-        "relationships": [
-          {
-            "tag": "Relationship",
-            "thickness": 3
-          }
-        ]
+      "elements" : [ {
+        "id" : "1",
+        "x" : 2105,
+        "y" : 230
+      }, {
+        "id" : "4",
+        "x" : 1000,
+        "y" : 2630
+      }, {
+        "id" : "5",
+        "x" : 2080,
+        "y" : 862
+      }, {
+        "id" : "6",
+        "x" : 1000,
+        "y" : 1746
+      }, {
+        "id" : "7",
+        "x" : 1004,
+        "y" : 1304
+      }, {
+        "id" : "8",
+        "x" : 1000,
+        "y" : 2188
+      }, {
+        "id" : "9",
+        "x" : 2080,
+        "y" : 2188
+      }, {
+        "id" : "10",
+        "x" : 2084,
+        "y" : 1505
+      }, {
+        "id" : "11",
+        "x" : 1005,
+        "y" : 862
+      }, {
+        "id" : "12",
+        "x" : 2080,
+        "y" : 2630
+      }, {
+        "id" : "13",
+        "x" : 2806,
+        "y" : 855
+      }, {
+        "id" : "18",
+        "x" : 2805,
+        "y" : 1500
+      }, {
+        "id" : "19",
+        "x" : 255,
+        "y" : 2195
+      }, {
+        "id" : "20",
+        "x" : 244,
+        "y" : 1311
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-001",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "23"
+      }, {
+        "id" : "26"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "41"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "46"
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "49"
+      }, {
+        "id" : "50"
+      } ]
+    }, {
+      "containerId" : "13",
+      "dimensions" : {
+        "height" : 3100,
+        "width" : 2436
       },
-      "terminology": {}
+      "elements" : [ {
+        "id" : "3",
+        "x" : 594,
+        "y" : 165
+      }, {
+        "id" : "14",
+        "x" : 594,
+        "y" : 765
+      }, {
+        "id" : "15",
+        "x" : 244,
+        "y" : 1965
+      }, {
+        "id" : "16",
+        "x" : 1075,
+        "y" : 1367
+      }, {
+        "id" : "17",
+        "x" : 219,
+        "y" : 1365
+      }, {
+        "id" : "21",
+        "x" : 1281,
+        "y" : 2565
+      }, {
+        "id" : "22",
+        "x" : 1785,
+        "y" : 2017
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-002",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "32"
+      }, {
+        "id" : "51"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "60",
+        "vertices" : [ {
+          "x" : 1725,
+          "y" : 1142
+        } ]
+      }, {
+        "id" : "64",
+        "vertices" : [ {
+          "x" : 1920,
+          "y" : 697
+        } ]
+      }, {
+        "id" : "65"
+      }, {
+        "id" : "66"
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "68"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "Component-001",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#005faa",
+          "color" : "#ffffff",
+          "shape" : "RoundedBox",
+          "strokeWidth" : 4,
+          "tag" : "Element"
+        }, {
+          "background" : "#1e325c",
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        }, {
+          "background" : "#999999",
+          "tag" : "External"
+        }, {
+          "shape" : "WebBrowser",
+          "tag" : "UI"
+        }, {
+          "strokeWidth" : 3,
+          "tag" : "Boundary"
+        }, {
+          "background" : "#ef8200",
+          "tag" : "Container"
+        } ],
+        "relationships" : [ {
+          "tag" : "Relationship",
+          "thickness" : 3
+        } ]
+      },
+      "terminology" : { }
     },
-    "containerViews": [
-      {
-        "dimensions": {
-          "height": 2020,
-          "width": 3110
-        },
-        "elements": [
-          {
-            "id": "1",
-            "x": 595,
-            "y": 165
-          },
-          {
-            "id": "3",
-            "x": 953,
-            "y": 910
-          },
-          {
-            "id": "13",
-            "x": 1706,
-            "y": 910
-          },
-          {
-            "id": "18",
-            "x": 200,
-            "y": 910
-          },
-          {
-            "id": "19",
-            "x": 510,
-            "y": 1485
-          },
-          {
-            "id": "20",
-            "x": 1345,
-            "y": 1485
-          },
-          {
-            "id": "21",
-            "x": 2460,
-            "y": 910
-          },
-          {
-            "id": "22",
-            "x": 1706,
-            "y": 220
-          }
-        ],
-        "externalSoftwareSystemBoundariesVisible": false,
-        "key": "EODCService",
-        "order": 3,
-        "relationships": [
-          {
-            "id": "24"
-          },
-          {
-            "id": "33"
-          },
-          {
-            "id": "36"
-          },
-          {
-            "id": "39"
-          },
-          {
-            "id": "42"
-          },
-          {
-            "id": "54"
-          },
-          {
-            "id": "57",
-            "vertices": [
-              {
-                "x": 1810,
-                "y": 700
-              }
-            ]
-          },
-          {
-            "id": "61",
-            "vertices": [
-              {
-                "x": 2090,
-                "y": 705
-              }
-            ]
-          },
-          {
-            "id": "64"
-          },
-          {
-            "id": "66"
-          }
-        ],
-        "softwareSystemId": "2"
-      }
-    ],
-    "systemContextViews": [
-      {
-        "dimensions": {
-          "height": 1748,
-          "width": 2480
-        },
-        "elements": [
-          {
-            "id": "1",
-            "x": 449,
-            "y": 124
-          },
-          {
-            "id": "2",
-            "x": 889,
-            "y": 724
-          },
-          {
-            "id": "18",
-            "x": 449,
-            "y": 1254
-          },
-          {
-            "id": "19",
-            "x": 449,
-            "y": 1254
-          },
-          {
-            "id": "20",
-            "x": 1379,
-            "y": 1254
-          },
-          {
-            "id": "21",
-            "x": 1579,
-            "y": 724
-          },
-          {
-            "id": "22",
-            "x": 1379,
-            "y": 174
-          }
-        ],
-        "enterpriseBoundaryVisible": true,
-        "key": "Diagram1",
-        "order": 2,
-        "paperSize": "A5_Landscape",
-        "relationships": [
-          {
-            "id": "25"
-          },
-          {
-            "id": "37"
-          },
-          {
-            "id": "40"
-          },
-          {
-            "id": "43"
-          },
-          {
-            "id": "55"
-          },
-          {
-            "id": "58",
-            "vertices": [
-              {
-                "x": 1470,
-                "y": 698
-              }
-            ]
-          },
-          {
-            "id": "62",
-            "vertices": [
-              {
-                "x": 1247,
-                "y": 499
-              }
-            ]
-          },
-          {
-            "id": "66"
-          }
-        ],
-        "softwareSystemId": "2"
-      }
-    ],
-    "systemLandscapeViews": [
-      {
-        "automaticLayout": {
-          "applied": true,
-          "edgeSeparation": 0,
-          "implementation": "Graphviz",
-          "nodeSeparation": 300,
-          "rankDirection": "LeftRight",
-          "rankSeparation": 300,
-          "vertices": false
-        },
-        "description": "Diagram3",
-        "dimensions": {
-          "height": 3109,
-          "width": 3050
-        },
-        "elements": [
-          {
-            "id": "1",
-            "x": 199,
-            "y": 1605
-          },
-          {
-            "id": "2",
-            "x": 899,
-            "y": 1655
-          },
-          {
-            "id": "18",
-            "x": 1649,
-            "y": 151
-          },
-          {
-            "id": "19",
-            "x": 1649,
-            "y": 751
-          },
-          {
-            "id": "20",
-            "x": 1649,
-            "y": 1351
-          },
-          {
-            "id": "21",
-            "x": 2399,
-            "y": 2260
-          },
-          {
-            "id": "22",
-            "x": 1649,
-            "y": 2560
-          }
-        ],
-        "enterpriseBoundaryVisible": true,
-        "key": "edc",
-        "order": 1,
-        "relationships": [
-          {
-            "id": "25"
-          },
-          {
-            "id": "37",
-            "vertices": [
-              {
-                "x": 1649,
-                "y": 601
-              }
-            ]
-          },
-          {
-            "id": "40"
-          },
-          {
-            "id": "43"
-          },
-          {
-            "id": "55"
-          },
-          {
-            "id": "58",
-            "vertices": [
-              {
-                "x": 1383,
-                "y": 2353
-              }
-            ]
-          },
-          {
-            "id": "62",
-            "vertices": [
-              {
-                "x": 1614,
-                "y": 2161
-              }
-            ]
-          },
-          {
-            "id": "66"
-          }
-        ]
-      }
-    ]
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 2020,
+        "width" : 3110
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 595,
+        "y" : 165
+      }, {
+        "id" : "3",
+        "x" : 953,
+        "y" : 910
+      }, {
+        "id" : "13",
+        "x" : 1706,
+        "y" : 910
+      }, {
+        "id" : "18",
+        "x" : 200,
+        "y" : 910
+      }, {
+        "id" : "19",
+        "x" : 510,
+        "y" : 1485
+      }, {
+        "id" : "20",
+        "x" : 1345,
+        "y" : 1485
+      }, {
+        "id" : "21",
+        "x" : 2460,
+        "y" : 910
+      }, {
+        "id" : "22",
+        "x" : 1706,
+        "y" : 220
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "EDCServices",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "24"
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "57",
+        "vertices" : [ {
+          "x" : 1810,
+          "y" : 700
+        } ]
+      }, {
+        "id" : "61",
+        "vertices" : [ {
+          "x" : 2090,
+          "y" : 705
+        } ]
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "66"
+      } ],
+      "softwareSystemId" : "2"
+    } ],
+    "systemContextViews" : [ {
+      "dimensions" : {
+        "height" : 1748,
+        "width" : 2480
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 449,
+        "y" : 124
+      }, {
+        "id" : "2",
+        "x" : 889,
+        "y" : 724
+      }, {
+        "id" : "18",
+        "x" : 449,
+        "y" : 1254
+      }, {
+        "id" : "19",
+        "x" : 449,
+        "y" : 1254
+      }, {
+        "id" : "20",
+        "x" : 1379,
+        "y" : 1254
+      }, {
+        "id" : "21",
+        "x" : 1579,
+        "y" : 724
+      }, {
+        "id" : "22",
+        "x" : 1379,
+        "y" : 174
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Context",
+      "order" : 2,
+      "paperSize" : "A5_Landscape",
+      "relationships" : [ {
+        "id" : "25"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "58",
+        "vertices" : [ {
+          "x" : 1470,
+          "y" : 698
+        } ]
+      }, {
+        "id" : "62",
+        "vertices" : [ {
+          "x" : 1247,
+          "y" : 499
+        } ]
+      }, {
+        "id" : "66"
+      } ],
+      "softwareSystemId" : "2"
+    } ],
+    "systemLandscapeViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "SystemLandscape",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "edc",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "25"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "66"
+      } ]
+    } ]
   }
 }
